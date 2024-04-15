@@ -14,8 +14,6 @@ import {
 } from "../../helpers/signingClasses";
 
 const KeyPad = ({ dispatch, calculatorState }) => {
-    const [activeOperator, setActiveOperator] = useState("");
-
     const getFunction = (value, dispatch) => {
         const typeButton = checkValueType(value);
         switch (typeButton) {

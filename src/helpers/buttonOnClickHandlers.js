@@ -25,23 +25,33 @@ export const checkValueType = (value) => {
 // and on depend of a type button the next functions will be called
 // for 'number'
 export const onClickButtonWithNumber = (value, dispatch, firstOperand, secondOperand, operator) => {
-    if (firstOperand === '' && value === '.' || secondOperand === '' && value === '.') {
-        dispatch({
+        if (value === '.') {
+            if (operator !== '') {
+                //
+                if (secondOperand === '') {
+                    dispatch({ type: 'add_number', value: `0${value}` });
+                } else {
+                    secondOperand.includes(".") ? '' : dispatch({ type: 'add_number', value: value });
+                }
+            } else { 
+                if (firstOperand === '0') {
+                    dispatch({ type: 'add_number', value: `${firstOperand}${value}` });
+                } else {
+                    firstOperand.includes(".") ? '' : dispatch({ type: 'add_number', value: value });
+                }
+            }
+        } else if (value === '0') {
+            if (operator !== '') {
+                secondOperand === '0' ? "" : dispatch({type: 'add_number', value: value})
+            } else {
+                firstOperand === '0' ? "" : dispatch({ type: 'add_number', value: value })
+            }
+        } else {
+            dispatch({
             type: "add_number",
-            value: `0${value}`,
+            value: value
         })
-    } else if ((value === '.' && secondOperand === '' && operator !== '') || (value === '.' && firstOperand === '')) {
-        dispatch({
-            type: "add_number",
-            value: `0${value}`,
-        });
-    } else {
-        dispatch({
-            type: "add_number",
-            value: value,
-        });
-    }
-    
+        }
 };
 
 // for 'operator'

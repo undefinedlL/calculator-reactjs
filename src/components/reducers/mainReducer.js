@@ -9,29 +9,29 @@ import {
 export const mainReducer = (state, action) => {
     switch (action.type) {
         case "add": {
-            const result = addOperands(state.firstOperand, state.secondOperand);
-            return { firstOperand: result, secondOperand: '', operator: action.next_operator, result: true};
+            const res = addOperands(state.firstOperand, state.secondOperand);
+            return { firstOperand: res, secondOperand: '', operator: action.next_operator, result: true};
         }
         case "subtract": {
-            const result = subtractOperands(
+            const res = subtractOperands(
                 state.firstOperand,
                 state.secondOperand
             );
-            return { ...state, firstOperand: result, secondOperand: '', result: true};
+            return { ...state, firstOperand: res, secondOperand: '', result: true};
         }
         case "multiply": {
-            const result = multiplyOperands(
+            const res = multiplyOperands(
                 state.firstOperand,
                 state.secondOperand
             );
-            return { ...state, firstOperand: result, secondOperand: '', result: true };
+            return { ...state, firstOperand: res, secondOperand: '', result: true };
         }
         case "divide": {
-            const result = divideOperands(
+            const res = divideOperands(
                 state.firstOperand,
                 state.secondOperand
             );
-            return { ...state, firstOperand: result, secondOperand: '', result: true };
+            return { ...state, firstOperand: res, secondOperand: '', result: true };
         }
         case "add_number": {
             if (state.operator === "" ) {
@@ -57,10 +57,10 @@ export const mainReducer = (state, action) => {
             return { ...state, operator: action.valueOperator, result: false };
         }
         case "delete_operator": {
-            return {...state, operator: '', result: true}
+                return {...state, operator: '', result: true}
         } 
         case "clear": {
-            return { firstOperand: "", secondOperand: "", operator: "", result: false };
+            return { firstOperand: "0", secondOperand: "", operator: "", result: true };
         }
         case "return_firstOperand": {
             return { ...state, operator: "" };

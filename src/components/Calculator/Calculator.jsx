@@ -5,7 +5,7 @@ import { mainReducer } from '../reducers/mainReducer';
 import './calculator.css'
 
 const Calculator = () => {
-  const [calculatorState, dispatch] = useReducer(mainReducer, {firstOperand: '', secondOperand: '', operator: '', result: false});
+  const [calculatorState, dispatch] = useReducer(mainReducer, {firstOperand: '0', secondOperand: '', operator: '', result: true});
   console.log(calculatorState)
   return (
     <div className="calculator">
