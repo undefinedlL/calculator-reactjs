@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+
+  color: rgb(255, 255, 255);
+}
+
+h1 span {
+  color: rgb(85, 31, 98);
+}
