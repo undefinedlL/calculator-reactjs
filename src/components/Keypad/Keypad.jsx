@@ -23,7 +23,8 @@ const KeyPad = ({ dispatch, calculatorState }) => {
                     dispatch,
                     calculatorState.firstOperand,
                     calculatorState.secondOperand,
-                    calculatorState.operator
+                    calculatorState.operator,
+                    calculatorState.result
                 );
                 break;
             }

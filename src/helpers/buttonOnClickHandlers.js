@@ -24,7 +24,7 @@ export const checkValueType = (value) => {
 // all buttons have a defined type (which checkValueType function returns)
 // and on depend of a type button the next functions will be called
 // for 'number'
-export const onClickButtonWithNumber = (value, dispatch, firstOperand, secondOperand, operator) => {
+export const onClickButtonWithNumber = (value, dispatch, firstOperand, secondOperand, operator, result) => {
         if (value === '.') {
             if (operator !== '') {
                 //
@@ -35,7 +35,12 @@ export const onClickButtonWithNumber = (value, dispatch, firstOperand, secondOpe
                 }
             } else { 
                 if (firstOperand === '0') {
-                    dispatch({ type: 'add_number', value: `${firstOperand}${value}` });
+                    if (result) {
+                        dispatch({ type: 'add_number', value: `${firstOperand}${value}` })
+                    } else {
+                        dispatch({ type: 'add_number', value: value })
+                    }
+                    ;
                 } else {
                     firstOperand.includes(".") ? '' : dispatch({ type: 'add_number', value: value });
                 }
