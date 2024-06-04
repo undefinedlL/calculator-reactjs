@@ -2,7 +2,7 @@
   "name": "reactjscalculator",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Speedwagon10.github.io/calculator-reactjs",
+  "homepage": "https://undefinedll.github.io/calculator-reactjs",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
