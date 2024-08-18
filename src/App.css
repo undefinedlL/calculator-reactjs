@@ -1,16 +1,16 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
 }
 
 h1 {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 
-  color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 h1 span {
-  color: rgb(85, 31, 98);
+    color: rgb(85, 31, 98);
 }

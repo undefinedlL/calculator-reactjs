@@ -1,23 +1,22 @@
-import React, { useState } from "react";
-import { KeypadButtonValues } from "../../constants";
-import "./keypad.css";
+import { KeypadButtonValues } from '../../constants';
+import './keypad.css';
 import {
     checkValueType,
     onClickButtonWithNumber,
     onClickButtonWithOperator,
     clearButton,
     onClickDeleteSymbolButton,
-} from "../../helpers/buttonOnClickHandlers";
+} from '../../helpers/buttonOnClickHandlers';
 import {
     signActiveClass,
     signClassFotButton,
-} from "../../helpers/signingClasses";
+} from '../../helpers/signingClasses';
 
 const KeyPad = ({ dispatch, calculatorState }) => {
     const getFunction = (value, dispatch) => {
         const typeButton = checkValueType(value);
         switch (typeButton) {
-            case "number": {
+            case 'number': {
                 onClickButtonWithNumber(
                     value,
                     dispatch,
@@ -28,8 +27,8 @@ const KeyPad = ({ dispatch, calculatorState }) => {
                 );
                 break;
             }
-            case "operator":
-            case "equal-button": {
+            case 'operator':
+            case 'equal-button': {
                 onClickButtonWithOperator(
                     value,
                     dispatch,
@@ -39,11 +38,11 @@ const KeyPad = ({ dispatch, calculatorState }) => {
                 );
                 break;
             }
-            case "del-button": {
+            case 'del-button': {
                 onClickDeleteSymbolButton(dispatch);
                 break;
             }
-            case "clear-button": {
+            case 'clear-button': {
                 clearButton(dispatch);
                 break;
             }
@@ -62,11 +61,11 @@ const KeyPad = ({ dispatch, calculatorState }) => {
                     data-type={checkValueType(value)}
                     value={value}
                     className={`keypad__button${
-                        value === "=" || value === "C" ? "--large" : ""
+                        value === '=' || value === 'C' ? '--large' : ''
                     } ${signClassFotButton(value)}${
-                        checkValueType(value) === "operator"
+                        checkValueType(value) === 'operator'
                             ? signActiveClass(value, calculatorState.operator)
-                            : ""
+                            : ''
                     }`}
                     onClick={() => getFunction(value, dispatch)}
                 >

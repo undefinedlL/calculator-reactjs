@@ -38,7 +38,7 @@
 
 .equal-button {
     background-color: rgba(49, 71, 88, 0.466);
-    
+
     border: 1px solid rgba(49, 71, 88, 0.466);
 }
 
@@ -47,7 +47,7 @@
 }
 .del-button {
     background-color: rgba(80, 49, 88, 0.466);
-    
+
     border: 1px solid rgba(60, 37, 66, 0.466);
 }
 
@@ -56,13 +56,10 @@
 }
 .clear-button {
     background-color: rgba(94, 38, 62, 0.466);
-    
+
     border: 1px solid rgba(61, 25, 41, 0.466);
 }
 
 .clear-button:hover {
     background-color: rgba(132, 41, 81, 0.5);
 }
-
-
- 

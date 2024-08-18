@@ -4,48 +4,65 @@ import {
     multiplyOperands,
     divideOperands,
     deleteOneSymbol,
-} from "../../helpers/operations";
+} from '../../helpers/operations';
 
 export const mainReducer = (state, action) => {
     switch (action.type) {
-        case "add": {
+        case 'add': {
             const res = addOperands(state.firstOperand, state.secondOperand);
-            return { firstOperand: res, secondOperand: '', operator: action.next_operator, result: true};
+            return {
+                firstOperand: res,
+                secondOperand: '',
+                operator: action.next_operator,
+                result: true,
+            };
         }
-        case "subtract": {
+        case 'subtract': {
             const res = subtractOperands(
                 state.firstOperand,
                 state.secondOperand
             );
-            return { ...state, firstOperand: res, secondOperand: '', result: true};
+            return {
+                ...state,
+                firstOperand: res,
+                secondOperand: '',
+                result: true,
+            };
         }
-        case "multiply": {
+        case 'multiply': {
             const res = multiplyOperands(
                 state.firstOperand,
                 state.secondOperand
             );
-            return { ...state, firstOperand: res, secondOperand: '', result: true };
+            return {
+                ...state,
+                firstOperand: res,
+                secondOperand: '',
+                result: true,
+            };
         }
-        case "divide": {
-            const res = divideOperands(
-                state.firstOperand,
-                state.secondOperand
-            );
-            return { ...state, firstOperand: res, secondOperand: '', result: true };
+        case 'divide': {
+            const res = divideOperands(state.firstOperand, state.secondOperand);
+            return {
+                ...state,
+                firstOperand: res,
+                secondOperand: '',
+                result: true,
+            };
         }
-        case "add_number": {
-            if (state.operator === "" ) {
+        case 'add_number': {
+            if (state.operator === '') {
                 if (!state.result) {
                     return {
                         ...state,
                         firstOperand: state.firstOperand + action.value,
                     };
-                } 
+                }
                 return {
                     ...state,
                     firstOperand: action.value,
-                    result: false
-                }
+                    result: false,
+                };
             } else {
                 return {
                     ...state,
@@ -53,23 +70,27 @@ export const mainReducer = (state, action) => {
                 };
             }
         }
-        case "add_operator": {
+        case 'add_operator': {
             return { ...state, operator: action.valueOperator, result: false };
         }
-        case "delete_operator": {
-                return {...state, operator: '', result: true}
-        } 
-        case "clear": {
-            return { firstOperand: "0", secondOperand: "", operator: "", result: true };
+        case 'delete_operator': {
+            return { ...state, operator: '', result: true };
         }
-        case "return_firstOperand": {
-            return { ...state, operator: "" };
+        case 'clear': {
+            return {
+                firstOperand: '0',
+                secondOperand: '',
+                operator: '',
+                result: true,
+            };
         }
-        case "delete_symbol": {
+        case 'return_firstOperand': {
+            return { ...state, operator: '' };
+        }
+        case 'delete_symbol': {
             return deleteOneSymbol(state);
         }
         default: {
-            console.log("ERORRRRR!!!!!");
             return { ...state };
         }
     }
