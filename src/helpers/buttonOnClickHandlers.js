@@ -1,23 +1,8 @@
+import { valueTypes } from '../constants';
+
 // check types to buttons that the Keypad component includes in
 export const checkValueType = (value) => {
-    switch (value) {
-        case '-':
-        case '+':
-        case '*':
-        case '/': {
-            return 'operator';
-        }
-        case 'C':
-        case 'D': {
-            return value === 'C' ? 'clear-button' : 'del-button';
-        }
-        case '=': {
-            return 'equal-button';
-        }
-        default: {
-            return 'number';
-        }
-    }
+    return valueTypes[value];
 };
 
 // all buttons have a defined type (which checkValueType function returns)

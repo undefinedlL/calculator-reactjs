@@ -1,6 +1,6 @@
 export const addOperands = (operand_1, operand_2) => {
     if (operand_2 !== '') {
-        return String(Number(operand_1) + Number(operand_2));
+        return String(+operand_1 + +operand_2);
     } else {
         return operand_1;
     }
@@ -8,7 +8,7 @@ export const addOperands = (operand_1, operand_2) => {
 
 export const subtractOperands = (operand_1, operand_2) => {
     if (operand_2 !== '') {
-        return String(Number(operand_1) - Number(operand_2));
+        return String(+operand_1 - +operand_2);
     } else {
         return operand_1;
     }
@@ -16,7 +16,7 @@ export const subtractOperands = (operand_1, operand_2) => {
 
 export const multiplyOperands = (operand_1, operand_2) => {
     if (operand_2 !== '') {
-        return String(Number(operand_1) * Number(operand_2));
+        return String(+operand_1 * +operand_2);
     } else {
         return operand_1;
     }
@@ -25,7 +25,7 @@ export const multiplyOperands = (operand_1, operand_2) => {
 export const divideOperands = (operand_1, operand_2) => {
     if (operand_1 !== '0' && operand_2 !== '0') {
         if (operand_2 !== '') {
-            return String(Number(operand_1) / Number(operand_2));
+            return String(+operand_1 / +operand_2);
         } else {
             return operand_1;
         }

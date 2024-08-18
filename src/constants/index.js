@@ -6,5 +6,18 @@ export const KeypadButtonValues = [
     ['0', '.', '='],
 ];
 
+export const valueTypes = {
+    '-': 'operator',
+    '+': 'operator',
+    '*': 'operator',
+    '/': 'operator',
+    C: 'clear-button',
+    D: 'del-button',
+    '=': 'equal-button',
+};
+Array.from({ length: 10 }, (_, i) => i.toString()).forEach((num) => {
+    valueTypes[num] = 'number';
+});
+
 export const operatorClass = 'operator';
 export const ActiveClass = '--active';
