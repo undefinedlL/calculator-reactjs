@@ -14,6 +14,7 @@ export const valueTypes = {
     C: 'clear-button',
     D: 'del-button',
     '=': 'equal-button',
+    '.': 'number',
 };
 Array.from({ length: 10 }, (_, i) => i.toString()).forEach((num) => {
     valueTypes[num] = 'number';

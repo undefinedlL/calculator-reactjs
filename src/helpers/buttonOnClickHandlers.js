@@ -1,9 +1,7 @@
 import { valueTypes } from '../constants';
 
 // check types to buttons that the Keypad component includes in
-export const checkValueType = (value) => {
-    return valueTypes[value];
-};
+export const checkValueType = (value) => valueTypes[value];
 
 // all buttons have a defined type (which checkValueType function returns)
 // and on depend of a type button the next functions will be called
